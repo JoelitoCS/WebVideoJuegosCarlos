@@ -4,6 +4,7 @@ body{
     margin: 0;
     padding: 0;
     overflow: hidden;
+    color: white;
 }
 
 #paginaPrincipal{
@@ -14,7 +15,7 @@ body{
     font-size: 50px;
     font-family: 'Arial Black', Gadget, sans-serif;
     text-shadow: 2px 2px 4px #000000;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -24,7 +25,7 @@ video{
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
+    z-index: 0;
     background-size: cover;
 }
 
