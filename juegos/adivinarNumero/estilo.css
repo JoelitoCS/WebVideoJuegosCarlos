@@ -1,0 +1,56 @@
+
+#mensajeAnunciado{
+    background-color: lightcyan;
+    border: 2px solid black;
+    width: 350px;
+    padding: 50px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 100px;
+}
+
+body {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#adivinaInput{
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 40px;
+    font-size: 13px;
+    width: 120px;
+    height: 0px;
+    text-align: center;
+}
+
+#comprobarButton{
+    background-color: lightblue;
+    border: 2px dotted;
+    padding: 10px 20px;
+    border-radius: 8px;
+    
+}
+
+#reiniciarButton{
+    background-color: lightgreen;
+    border: 2px dotted;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+#numIntentos{
+    margin: 20px 100px 0 0;
+    padding: 10px;
+    width: 200px;
+    border: 2px ridge black;
+    border-radius: 10px;
+    background-color: mediumseagreen;
+    
+}

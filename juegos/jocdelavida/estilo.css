@@ -1,0 +1,33 @@
+       
+        #tablero {
+            /* Si quiero centrar algo acuerdate justify-items: center */
+            justify-items: center;
+        
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .univers {
+        display: flex;
+        flex-direction: column;
+        }
+
+        .fila {
+        display: flex;
+        }
+
+        .celula {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        }
+
+        .viva {
+        background-color: #000;
+        }
+
+        .morta {
+        background-color: #fff;
+        }
