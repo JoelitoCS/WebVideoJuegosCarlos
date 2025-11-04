@@ -3,19 +3,29 @@
 body{
     margin: 0;
     padding: 0;
-    overflow: hidden;
     color: white;
 }
 
+
 #paginaPrincipal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+     position: relative;
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    max-width: 1200px; /* opcional: limita ancho para que el centrado sea evidente */
     color: white;
     font-size: 50px;
     font-family: 'Arial Black', Gadget, sans-serif;
     text-shadow: 2px 2px 4px #000000;
     z-index: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
 }
 
 
@@ -33,6 +43,26 @@ video{
 #paginaPrincipal li{
     text-decoration: none;
     list-style: none;
+    display: flex;
+    justify-content: center; /* centra horizontalmente cada <li> */
+    align-items: center;
+}
+
+#paginaPrincipal img{
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    border: 5px solid white;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px black;
+    transition: 0.3s;
+    display: block; /* antes era flex, ahora block para centrar correctamente */
+    object-fit: cover;
+}
+
+.juegosImg:hover img{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 25px black;
 }
 
 
