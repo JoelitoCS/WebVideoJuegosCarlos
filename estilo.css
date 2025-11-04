@@ -1,68 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+}
 
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
-body{
-    margin: 0;
-    padding: 0;
-    color: white;
+#paginaPrincipal {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh; /* antes height: 100vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* reparte mejor el espacio vertical */
+  align-items: center;
+  text-align: center;
+  padding: 40px 0; /* aire arriba y abajo */
+  box-sizing: border-box;
 }
 
 
-#paginaPrincipal{
-     position: relative;
-    margin: 0 auto;
-    left: 0;
-    top: 0;
-    transform: none;
-    width: 100%;
-    max-width: 1200px; /* opcional: limita ancho para que el centrado sea evidente */
-    color: white;
-    font-size: 50px;
-    font-family: 'Arial Black', Gadget, sans-serif;
-    text-shadow: 2px 2px 4px #000000;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0;
+#paginaPrincipal h1 {
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 60px;
+  color: white;
+  text-shadow: 3px 3px 6px black;
+  margin-top: 10px;
+  margin-bottom: 60px; /* espacio entre título e imágenes */
 }
 
-
-video{
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    background-size: cover;
+.juegosImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.juegosImg img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px black;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-#paginaPrincipal li{
-    text-decoration: none;
+#juegoDelaVida:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+#pacman:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+#adivinarNumero:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+#explicacionJocDeLaVida{
+    padding: 20px;
+    background-color: rgba(168, 194, 199, 0.7);
+    border-radius: 20px;
     list-style: none;
-    display: flex;
-    justify-content: center; /* centra horizontalmente cada <li> */
-    align-items: center;
+    margin: 50px;
+    width: 400px;
 }
 
-#paginaPrincipal img{
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    border: 5px solid white;
-    border-radius: 15px;
-    box-shadow: 5px 5px 15px black;
-    transition: 0.3s;
-    display: block; /* antes era flex, ahora block para centrar correctamente */
-    object-fit: cover;
+#explicacionJocDeLaVida li{
+    
+    list-style: none;
 }
-
-.juegosImg:hover img{
-    transform: scale(1.1);
-    box-shadow: 10px 10px 25px black;
-}
-
 
