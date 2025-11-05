@@ -3,8 +3,9 @@ body {
   padding: 0;
   color: white;
   background: black;
-  height: 100vh;
-  overflow: hidden;
+  /* ❌ elimina height y overflow */
+  min-height: 100vh; /* opcional, asegura al menos el alto de la pantalla */
+  overflow-x: hidden;
 }
 
 video {
@@ -26,8 +27,8 @@ video {
   text-align: center;
   padding: 40px 0; /* aire arriba y abajo */
   box-sizing: border-box;
-}
 
+}
 
 #paginaPrincipal h1 {
   font-family: 'Arial Black', Gadget, sans-serif;
@@ -46,6 +47,7 @@ video {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .juegosImg img {
@@ -73,7 +75,22 @@ video {
   box-shadow: 10px 10px 25px black;
 }
 
-#explicacionJocDeLaVida{
+#juegoDeLaOca:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+#ejercicioCRUD:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+#juegoPreguntas:hover img {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px black;
+}
+
+.explicacionJuego{
     padding: 20px;
     background-color: rgba(168, 194, 199, 0.7);
     border-radius: 20px;
@@ -82,7 +99,7 @@ video {
     width: 400px;
 }
 
-#explicacionJocDeLaVida li{
+.explicacionJuego li{
     
     list-style: none;
 }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+    body {
+        background-color: #f8fafc;
+        color: #0f172a;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        text-align: center;
+    }
+    .botonesRespuesta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.125rem;
+        font-weight: 500;
+        border: 2px solid #e2e8f0;
+        background: transparent;
+        transition: all 0.2s;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        text-align: center;
+        width: 60%;
+    }
+
+    .divRespuestas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    h1 {
+        color: #0891b2;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    #ganarPartida {
+        color: #16a34a;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #mostrarTodo {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        margin: 1rem auto 1.5rem auto;
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .pregunta-titulo {
+        color: #0891b2;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .respuesta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 3.5rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        border: 2px solid #e2e8f0;
+        background: transparent;
+        transition: all 0.2s;
+        margin-bottom: 1rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    .respuesta-btn:hover {
+        background-color: #0891b2;
+        color: white;
+        border-color: #0891b2;
+    }
+
+    .respuesta-letra {
+        color: #0891b2;
+        font-weight: bold;
+        margin-right: 0.75rem;
+    }
+
+    #tirarDado {
+        background-color: #06b6d4;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.75rem 2rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        margin-top: 1.5rem;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    #tirarDado:hover {
+        background-color: #0891b2;
+    }
+
+    #posicionActual {
+        font-size: 1.25rem;
+        color: #0e7490;
+        margin-bottom: 1rem;
+    }
+
+    .progress {
+        width: 50%;
+        background-color: #eee;
+        border-radius: 10px;
+        height: 25px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        display: flex;
+        background-color: #4caf50;
+        transition: width 0.3s;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Juego de las preguntas</h1>
+    <div id="mostrarTodo"></div>
+    <div id="posicionActual"></div>
+    <div id="posicionJugador"></div>
+
+    <!-- Barra de progreso -->
+
+    <div class="progress">
+        <div id="progressBar" class="progress-bar">0%</div>
+    </div>
+
+    <button id="tirarDado">Tirar dado</button>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
