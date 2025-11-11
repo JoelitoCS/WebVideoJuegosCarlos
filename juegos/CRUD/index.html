@@ -160,6 +160,52 @@
         </div>
       </div>
 
+      <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="modalEditarLabel">Editar incidència</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tanca"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="hidden" id="edit-id">
+
+              <label for="edit-titol" class="col-form-label">Títol:</label>
+              <textarea class="form-control" id="edit-titol"></textarea>
+
+              <label for="edit-descripcio" class="col-form-label">Descripció:</label>
+              <textarea class="form-control" id="edit-descripcio"></textarea>
+
+              <label for="edit-estat" class="col-form-label">Estat:</label>
+              <select class="form-select" id="edit-estat">
+                <option value="tancat">Tancat</option>
+                <option value="en_proces">En procés</option>
+                <option value="obert">Obert</option>
+              </select>
+
+              <label for="edit-prioritat" class="col-form-label">Prioritat:</label>
+              <select class="form-select" id="edit-prioritat">
+                <option value="baixa">Baixa</option>
+                <option value="mitjana">Mitjana</option>
+                <option value="alta">Alta</option>
+              </select>
+
+              <label for="edit-assignat" class="col-form-label">Assignat a:</label>
+              <input type="text" class="form-control" id="edit-assignat">
+
+              <label for="edit-data" class="col-form-label">Data:</label>
+              <input type="date" class="form-control" id="edit-data">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tanca</button>
+            <button type="button" class="btn btn-primary" id="btnGuardarCanvis" data-bs-dismiss="modal">Guardar canvis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
           <!-- Missatge si no hi ha dades -->
           <!-- <div class="alert alert-info mt-4 text-center">
             No hi ha incidències que coincideixin amb els filtres aplicats.

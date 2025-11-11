@@ -126,7 +126,78 @@ function renderitzarTaula() {
 
     if (event.target.classList.contains("btn-success")) {
 
-      console.log("Has pulsado el botón de editar")
+      // busca la fila <tr> más cercana al botón en el que se hizo clic
+      const fila = event.target.closest("tr");
+
+      //obtiene el ID de la incidencia leyendo el primer <td> de esa fila, quiero el parseINT porque textContent nos da un String no un numero
+      //el cual despues tendre que comparar con otro numero
+      const idIncidencia = parseInt(fila.querySelector("td").textContent);
+
+      // variable para guardar la incidencia seleccionada
+      let incidenciaSeleccionada = null;
+
+      // recorremos el array "incidencies" para buscar la que tenga ese ID
+      for (let i = 0; i < incidencies.length; i++) {
+        if (incidencies[i].id === idIncidencia) {
+          //cogemos la incidencia seleccionada de mi array idncidencies
+          incidenciaSeleccionada = incidencies[i];
+          
+        }
+      }
+
+      //s i no se encontró ninguna incidencia, detenemos la función
+      if (!incidenciaSeleccionada){
+        return;
+      }
+
+      // rellenamos los campos del modal con los datos de la incidencia seleccionada
+      //esto srive para que cuando le demos a editar, salga los textos que hay en la incidencia y asi los editas al gusto
+      document.querySelector("#edit-id").value = incidenciaSeleccionada.id;
+      document.querySelector("#edit-titol").value = incidenciaSeleccionada.titol;
+      document.querySelector("#edit-descripcio").value = incidenciaSeleccionada.descripcio;
+      document.querySelector("#edit-estat").value = incidenciaSeleccionada.estat;
+      document.querySelector("#edit-prioritat").value = incidenciaSeleccionada.prioritat;
+      document.querySelector("#edit-assignat").value = incidenciaSeleccionada.assignat;
+      document.querySelector("#edit-data").value = incidenciaSeleccionada.dataCreacio;
+
+      //creamos una instancia del modal de Bootstrap apuntando al #modalEditar
+      const modalEditar = new bootstrap.Modal(document.querySelector("#modalEditar"));
+
+      // Mostramos el modal en pantalla
+      modalEditar.show();
+  
+
+      // Escucha el clic en el botón "Guardar canvis" del modal de edición
+      document.querySelector("#btnGuardarCanvis").addEventListener("click", function() {
+
+        // Obtiene el ID de la incidencia que se está editando (campo oculto)
+      const id = parseInt(document.querySelector("#edit-id").value);
+
+        //recorre el array "incidencies" para encontrar esa incidencia
+      for (let i = 0; i < incidencies.length; i++) {
+        if (incidencies[i].id === id) {
+
+          //actualiza cada campo del objeto con los nuevos valores del formulario
+          incidencies[i].titol = document.querySelector("#edit-titol").value;
+          incidencies[i].descripcio = document.querySelector("#edit-descripcio").value;
+          incidencies[i].estat = document.querySelector("#edit-estat").value;
+          incidencies[i].prioritat = document.querySelector("#edit-prioritat").value;
+          incidencies[i].assignat = document.querySelector("#edit-assignat").value;
+          incidencies[i].dataCreacio = document.querySelector("#edit-data").value;
+          
+          }
+        }
+
+        // Actualizamos la tabla para reflejar los cambios en pantalla
+        renderitzarTaula();
+
+        // Actualizamos también las estadísticas
+        actualitzarEstadistiques();
+
+        // Cerramos el modal de ediciónl, con ayuda del chatgpt
+        const modalEditar = bootstrap.Modal.getInstance(document.querySelector("#modalEditar"));;
+        modalEditar.hide();
+      });
 
     }
 
@@ -167,7 +238,9 @@ function cambiarFiltro() {
     let filtroPrioVal = filtroPrioridad.value;
     let filtroEstVal = filtroEstado.value;
 
-    //filtramos nuestra array y le decimos que haga una funcion donde creamos las variabless coincidePrioritat y coincideEstat, cada una dice que si filtroPrioVal o filtroEstVal es igual a lo que esta en mi array incidencies en prioritat, que sera obert, tancat, en proces etc, entonces que me devuelva los valores de esas variables
+    //filtramos nuestra array y le decimos que haga una funcion donde creamos las variabless coincidePrioritat y coincideEstat, 
+    //cada una dice que si filtroPrioVal o filtroEstVal es igual a lo que esta en mi array incidencies en prioritat, que sera obert, tancat, en proces etc, 
+    //entonces que me devuelva los valores de esas variables
 
     //cabe recalcar que también decimos que filtroPrioVal y filtroEstVal esten vacios porque asi cuando no haya ninguna prioridad seleccionada pues que se muestren todas las prioridades en este caso
 
@@ -265,7 +338,7 @@ function cambiarFiltro() {
 function netejarFiltres() {
 
   const btnLimpiar = document.querySelector(".btn-secondary");
-
+  //vaciamos todo para limpiar los filtros 
   btnLimpiar.addEventListener("click", function () {
     filtreEstat.value = "";
     filtrePrioritat.value = "";
@@ -277,10 +350,13 @@ function netejarFiltres() {
 
 function actualitzarEstadistiques() {
 
+  //este trozo es para ver cuantas incidencias hay en total
   const totalIncidencies = document.querySelector("#divEstadistica1");
 
   totalIncidencies.textContent = `${incidencies.length}`;
 
+  //cogemos el div de incidencias abiertas, luego filtramos cada incidencia de mi array incidencias con el .lengthy miramos que si incidencia contiene obert,
+  //en proces, o tancat entonces cada div contendra el numero de incidencies que hemos filtrado con ese estado en la variable del filter
   const incidenciesObertes = document.querySelector("#divEstadistica2");
   const incidenciesObertesNum = incidencies.filter((incidencia) => incidencia.estat == "obert").length;
   incidenciesObertes.textContent = incidenciesObertesNum;
@@ -295,6 +371,8 @@ function actualitzarEstadistiques() {
 
 
 }
+
+//este es un trozo de js de modal de bootstrap
 
 function obrirModalNova(){
   
