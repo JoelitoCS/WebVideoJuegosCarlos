@@ -21,7 +21,7 @@ let btnComprobar = document.querySelector("#comprobarButton");
 let inputNum = document.querySelector("#adivinaInput");
 let mensajeDiv = document.querySelector("#mensajeAnunciado");
 let intentosDiv = document.querySelector("#numIntentos");
-const INTENTOS_MAX = 5;
+const INTENTOS_MAX = 10;
 let intentos = INTENTOS_MAX;
 
 mensajeDiv.innerHTML = "Adivina un numero entre 1 y 100";
