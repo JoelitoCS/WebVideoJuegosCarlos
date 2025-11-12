@@ -2,7 +2,7 @@
 //Declaramos las dos arrays, la de enemigos y la de matriz fuera de las funciones
 const enemigos = [];
 const matriz = [];
-let pacman = { f: 4, c: 4 }; //// Pac-Man empieza en el centro de la matriz
+let pacman = { f: 4, c: 4 }; //// Pac-Man empieza arriba a la izquierda
 let nivelSiguiente = document.querySelector("#siguienteNivel");
 let nivel = 1;
 
@@ -13,7 +13,7 @@ moverPacMan();
 let pacmanImg = matriz[pacman.f][pacman.c] = `<img  id="jugadorPacman" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Pacman_HD.png" alt="Pacman">`;
 renderArray(matriz);
 
-//creamos la matriz de 9x9 donde se va a mover pacman y van a estar los enemigos
+
 function crearMatriz() {
 
     for (let f = 0; f < 9; f++) {
@@ -149,7 +149,7 @@ function nivelCompletado() {
             
         nivelSiguiente.innerHTML = `<h2>¡Felicidades! Has completado el nivel ${nivel} </h2>`;
         nivel ++;
-        crearEnemigos(); //Volvemos a crear enemigos
+        crearEnemigos(); //Aumenta la cantidad de enemigos en cada nivel
         matriz[pacman.f][pacman.c] = pacmanImg; //Reubica a Pacman en la matriz
         renderArray(matriz);
 

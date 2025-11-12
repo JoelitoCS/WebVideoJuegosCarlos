@@ -1,106 +1,37 @@
-body {
-  margin: 0;
-  padding: 0;
-  color: white;
-  background: black;
-  /* ❌ elimina height y overflow */
-  min-height: 100vh; /* opcional, asegura al menos el alto de la pantalla */
-  overflow-x: hidden;
+
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-video {
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: 0;
+#paginaPrincipal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 50px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    z-index: 1;
 }
 
-#paginaPrincipal {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh; /* antes height: 100vh */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; /* reparte mejor el espacio vertical */
-  align-items: center;
-  text-align: center;
-  padding: 40px 0; /* aire arriba y abajo */
-  box-sizing: border-box;
 
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
 }
 
-#paginaPrincipal h1 {
-  font-family: 'Arial Black', Gadget, sans-serif;
-  font-size: 60px;
-  color: white;
-  text-shadow: 3px 3px 6px black;
-  margin-top: 10px;
-  margin-bottom: 60px; /* espacio entre título e imágenes */
-}
 
-.juegosImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-
-.juegosImg img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border: 5px solid white;
-  border-radius: 15px;
-  box-shadow: 5px 5px 15px black;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#juegoDelaVida:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-#pacman:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-#adivinarNumero:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-#juegoDeLaOca:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-#ejercicioCRUD:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-#juegoPreguntas:hover img {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 25px black;
-}
-
-.explicacionJuego{
-    padding: 20px;
-    background-color: rgba(168, 194, 199, 0.7);
-    border-radius: 20px;
-    list-style: none;
-    margin: 50px;
-    width: 400px;
-}
-
-.explicacionJuego li{
-    
+#paginaPrincipal li{
+    text-decoration: none;
     list-style: none;
 }
+
 
